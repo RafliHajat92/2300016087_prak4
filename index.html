@@ -3,54 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Navbar</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-  <nav class="container mx-auto flex items-center justify-between p-4 shadow-md">
-    <div class="bg-gray-100 h-16 flex items-center px-6 shadow-md fixed top-0 left-0 w-full z-10">
-      <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <div class="bg-blue-100 p-2 rounded-full">
-          <img src="src/Logo jam.png" alt="Logo" class="w-9 h-9">
-        </div>
-        <span class="text-lg font-semibold text-gray-700">Remind<span class="text-blue-600">me</span></span>
+  <nav class="bg-gray-100 h-16 flex items-center px-6 shadow-md fixed top-0 left-0 w-full z-10">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <div class="bg-blue-100 p-2 rounded-full">
+        <img src="src/Logo jam.png" alt="Logo" class="w-9 h-9">
       </div>
+      <span class="text-lg font-semibold text-gray-700">Remind<span class="text-blue-600">me</span></span>
+    </div>
 
-      <!-- Links -->
-      <div class="flex space-x-8 text-gray-600">
-        <a href="#" class="font-semibold text-blue-600">Home</a>
-        <a href="#" class="hover:text-blue-600">Features</a>
-        <a href="#" class="hover:text-blue-600">About us</a>
-      </div>
+    <!-- Links for Desktop -->
+    <div class="hidden md:flex space-x-8 text-gray-600 ml-6">
+      <a href="#" class="font-semibold text-blue-600">Home</a>
+      <a href="#" class="hover:text-blue-600">Features</a>
+      <a href="#" class="hover:text-blue-600">About us</a>
+    </div>
 
-      <!-- Button aligned to the right -->
-      <div class="ml-auto"> <!-- Added ml-auto here -->
-        <a href="link" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50">About App</a>
-      </div>
+    <!-- Button aligned to the right -->
+    <div class="ml-auto hidden md:flex">
+      <a href="link" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50">About App</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden ml-auto">
+      <button id="mobile-menu-button" class="focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
     </div>
   </nav>
-</body>
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="md:hidden flex flex-col space-y-2 mt-20 px-6 hidden text-right">
+    <a href="#" class="font-semibold text-blue-600 text-right">Home</a>
+    <a href="#" class="hover:text-blue-600">Features</a>
+    <a href="#" class="hover:text-blue-600">About us</a>
+    <a href="link" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50">About App</a>
+  </div>
 
 
-  <div class="container mx-auto flex items-center justify-center p-8">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-center p-8">
     <!-- Left Section: Text -->
-    <div class="w-1/2">
-      <h1 class="text-6xl font-bold text-gray-800 mb-4">Manage <br> Schedule and <br> Task Easy</h1>
-      <p class="text-gray-500 mb-9 text-2xl">Create and organize schedule and task deadline become better, easy manage and certainly no longer lagging behind schedule of activities and task</p>
+    <div class="w-full md:w-1/2 mb-8 md:mb-0">
+      <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Manage <br> Schedule and <br> Task Easy</h1>
+      <p class="text-gray-500 mb-9 text-xl md:text-2xl">Create and organize schedule and task deadline become better, easy manage and certainly no longer lagging behind schedule of activities and task</p>
       <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300">Download App</a>
     </div>
 
     <!-- Right Section: Image -->
-    <div class="w-1/2 flex justify-center">
-      <img src="src/HP.png" alt="hp" class="w-5/6 rounded-lg shadow-lg">
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img src="src/HP.png" alt="hp" class="w-full h-auto rounded-lg shadow-lg">
     </div>
   </div>
 
   <div class="container mx-auto py-12">
     <div class="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0">
       <!-- Card 1 -->
-      <div class="text-left">
+      <div class="text-center">
         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <img src="src/kalender.png" alt="Calendar Icon" class="w-8 h-8">
         </div>
@@ -68,9 +82,9 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="text-right">
+      <div class="text-center">
         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <img src="src/notifikasi.png" alt="Notification Icon" class="w-8 h-8">
+          <img src="src/notifikasi.png" alt="Notification Icon" class="w-8 h-8  " >
         </div>
         <h3 class="text-lg font-semibold text-gray-800">Wouldn’t miss notifications</h3>
         <p class="text-gray-500">Of course you will always get the tasks and schedule notifications</p>
@@ -120,8 +134,8 @@
         <button class="bg-white text-blue-500 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100 transition duration-300">
           Download App
         </button>
-        <button class="border-2 border-white text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-400 transition duration-300">
-          About App
+        <button class="bg-white text-blue-500 font-semibold px-6 py-2 rounded-full shadow hover:bg-blue-100 transition duration-300">
+          Get Started
         </button>
       </div>
     </div>
@@ -156,7 +170,7 @@
     </div>
   </section>
 
-  <footer class="bg-white py-8">
+  <footer class="bg-gray-200 py-8 shadow-">
     <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start">
       <!-- Logo and Description -->
       <div class="flex-1 mb-6 md:mb-0">
@@ -206,6 +220,16 @@
       </div>
     </div>
   </footer>
+  
+  <script src="script.js"></script>
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>
